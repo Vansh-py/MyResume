@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume of Vansh Chandel, Computer Science and Engineering student at Lovely Professional University.">
+  <title>Vansh Chandel | Resume</title>
+  <style>
+:root {
+  --ink: #182633;
+  --muted: #596b79;
+  --soft-muted: #768794;
+  --accent: #087f8c;
+  --accent-dark: #075e69;
+  --accent-soft: #e6f4f4;
+  --line: #dce6e9;
+  --paper: #ffffff;
+  --canvas: #edf2f4;
+  --shadow: 0 18px 60px rgba(19, 44, 57, 0.10);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.page-shell {
+  width: min(100% - 40px, 1000px);
+  margin: 34px auto;
+  background: var(--paper);
+  border: 1px solid #e3eaed;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 52px 58px 45px;
+  color: #f5fbfc;
+  background: linear-gradient(120deg, #122a3a 0%, #173d4b 65%, #126976 100%);
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: 80px;
+  top: -185px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 32px rgba(255,255,255,.025), 0 0 0 64px rgba(255,255,255,.02);
+  pointer-events: none;
+}
+.hero-copy { position: relative; z-index: 1; max-width: 660px; }
+.eyebrow {
+  margin: 0 0 12px;
+  color: #a9dce0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .17em;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -.045em;
+}
+h1 span { color: #8ee0df; }
+.hero-subtitle { margin: 14px 0 6px; font-size: 16px; font-weight: 600; color: #e0eff1; }
+.hero-summary { max-width: 560px; margin: 8px 0 0; color: #d0e0e5; font-size: 14px; }
+.hero-actions { position: relative; z-index: 2; flex-shrink: 0; }
+.print-button {
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 9px;
+  background: #f7fbfc;
+  color: #173946;
+  padding: 12px 15px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform .18s ease, background .18s ease;
+}
+.print-button:hover { transform: translateY(-2px); background: #e2f7f6; }
+.print-button:focus-visible, a:focus-visible { outline: 3px solid #54bdc0; outline-offset: 3px; }
+.print-button span { margin-right: 5px; font-size: 16px; }
+.hero-mark { display: none; }
+.quick-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 13px 28px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfdfd;
+}
+.quick-nav a {
+  padding: 7px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--muted);
+  transition: color .2s ease, background .2s ease;
+}
+.quick-nav a:hover { color: var(--accent-dark); background: var(--accent-soft); }
+.resume-content { padding: 16px 58px 28px; }
+.resume-section { padding: 27px 0 29px; border-bottom: 1px solid var(--line); scroll-margin-top: 20px; }
+.resume-section:last-child { border-bottom: none; }
+.section-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 17px; }
+.section-number { color: var(--accent); font-size: 11px; font-weight: 850; letter-spacing: .08em; }
+.section-heading h2 { margin: 0; font-size: 21px; letter-spacing: -.025em; font-weight: 750; }
+.section-heading::after { content: ""; height: 1px; flex: 1; margin-left: 8px; background: var(--line); }
+.body-copy { margin: 0; color: #405360; font-size: 14px; line-height: 1.85; }
+
+/* --- Contact section styles --- */
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #344957;
+}
+.contact-list li strong {
+  font-weight: 650;
+  color: var(--ink);
+  min-width: 68px;
+}
+.contact-list a {
+  color: var(--accent-dark);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: border-color .2s ease;
+}
+.contact-list a:hover {
+  border-bottom-color: var(--accent-dark);
+}
+/* --- end contact styles --- */
+
+.skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px; }
+.skill-group h3 { margin: 0 0 9px; color: #344957; font-size: 13px; font-weight: 750; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.skill-tags span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #d8e8ea;
+  border-radius: 6px;
+  padding: 4px 9px;
+  color: #31515c;
+  background: #f5fbfb;
+  font-size: 12px;
+  font-weight: 600;
+}
+.project-list { display: grid; gap: 12px; }
+.project-card { padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: #fcfefe; break-inside: avoid; }
+.project-topline { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.project-topline h3, .achievement h3 { margin: 0; font-size: 14px; line-height: 1.45; font-weight: 750; }
+.project-type { flex-shrink: 0; padding: 3px 8px; color: var(--accent-dark); background: var(--accent-soft); border-radius: 5px; font-size: 10px; font-weight: 800; letter-spacing: .035em; }
+.project-card p { margin: 8px 0 0; color: #50616d; font-size: 13px; }
+.project-card .tech-line { margin-top: 8px; color: #47606c; font-size: 12px; }
+.tech-line strong { color: #273d49; }
+.education-entry { display: grid; grid-template-columns: 12px 1fr; gap: 15px; }
+.education-marker { width: 10px; height: 10px; margin-top: 6px; background: var(--accent); border: 3px solid #d2eeee; border-radius: 50%; box-sizing: content-box; }
+.education-details h3 { margin: 0; font-size: 15px; }
+.date-label { flex-shrink: 0; color: var(--accent-dark); font-size: 12px; font-weight: 700; }
+.degree { margin: 6px 0 0; color: #344957; font-size: 14px; }
+.muted { margin: 2px 0 0; color: var(--soft-muted); font-size: 12px; }
+.achievement-list { display: grid; gap: 0; }
+.achievement { display: grid; grid-template-columns: 84px 1fr; gap: 17px; padding: 13px 0; border-bottom: 1px solid #edf1f2; break-inside: avoid; }
+.achievement:last-child { border-bottom: none; }
+.achievement-year { padding-top: 1px; color: var(--accent-dark); font-size: 11px; font-weight: 850; letter-spacing: .035em; text-transform: uppercase; }
+.achievement p { margin: 4px 0 0; color: #5a6a75; font-size: 13px; }
+.fine-print { margin: 12px 0 0; color: var(--soft-muted); font-size: 11px; line-height: 1.6; }
+.resume-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 58px; background: #f7fafb; border-top: 1px solid var(--line); color: #5c6e79; font-size: 11px; }
+.resume-footer p { margin: 0; }
+.resume-footer span { color: var(--accent); }
+.footer-note { text-align: right; }
+
+@media (max-width: 760px) {
+  .page-shell { width: min(100% - 24px, 600px); margin: 12px auto; border-radius: 13px; }
+  .hero { display: block; padding: 36px 28px 32px; }
+  .hero::after { right: -150px; top: -155px; }
+  h1 { font-size: clamp(36px, 9vw, 49px); }
+  .hero-subtitle { font-size: 14px; }
+  .hero-summary { font-size: 13px; }
+  .hero-actions { margin-top: 20px; }
+  .print-button { padding: 10px 12px; }
+  .quick-nav { justify-content: flex-start; gap: 2px; padding: 10px 14px; }
+  .quick-nav a { padding: 7px 9px; }
+  .resume-content { padding: 8px 28px 20px; }
+  .resume-section { padding: 24px 0; }
+  .section-heading h2 { font-size: 19px; }
+  .skills-grid { grid-template-columns: 1fr; gap: 15px; }
+  .contact-list { flex-direction: column; gap: 8px; }
+  .contact-list li strong { min-width: 60px; }
+  .resume-footer { display: block; padding: 18px 28px; }
+  .footer-note { margin-top: 4px !important; text-align: left; }
+}
+
+@media (max-width: 420px) {
+  body { font-size: 14px; }
+  .page-shell { width: 100%; margin: 0; border: 0; border-radius: 0; }
+  .hero { padding: 30px 20px 27px; }
+  .eyebrow { font-size: 9px; }
+  .resume-content { padding-right: 20px; padding-left: 20px; }
+  .section-heading { gap: 9px; }
+  .section-heading h2 { font-size: 18px; }
+  .project-card { padding: 14px; }
+  .project-topline { display: block; }
+  .project-type { display: inline-block; margin-top: 7px; }
+  .achievement { grid-template-columns: 62px 1fr; gap: 10px; }
+  .date-label { display: block; margin-top: 5px; }
+  .resume-footer { padding: 16px 20px; }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 10mm 12mm; }
+  :root {
+    --ink: #182633;
+    --muted: #596b79;
+    --soft-muted: #6d7d89;
+    --accent: #0b6c78;
+    --accent-dark: #0a4d59;
+    --line: #dfe7ea;
+    --paper: #ffffff;
+    --canvas: #ffffff;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: var(--ink);
+    font-size: 10.5pt;
+    line-height: 1.45;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .page-shell {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    background: var(--paper);
+  }
+
+  .hero {
+    padding: 18px 24px 16px;
+    gap: 8px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(120deg, #122a3a 0%, #173d4b 65%, #126976 100%);
+  }
+
+  .hero::after { display: none; }
+  .hero-copy { max-width: none; }
+  .eyebrow { font-size: 7.5pt; margin-bottom: 5px; }
+  h1 { font-size: 26pt; }
+  .hero-subtitle { margin-top: 6px; font-size: 9.5pt; }
+  .hero-summary { margin-top: 3px; font-size: 8.8pt; }
+  .quick-nav, .screen-only { display: none !important; }
+
+  .resume-content {
+    padding: 0 24px;
+  }
+
+  .resume-section {
+    padding: 12px 0 13px;
+    border-bottom-color: var(--line);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .section-heading {
+    margin-bottom: 8px;
+    gap: 7px;
+  }
+
+  .section-heading::after {
+    background: var(--line);
+  }
+
+  .section-number {
+    font-size: 7.5pt;
+  }
+
+  .section-heading h2 { font-size: 12.5pt; }
+  .body-copy { font-size: 8.9pt; line-height: 1.5; }
+
+  .contact-list {
+    gap: 5px 16px;
+  }
+
+  .contact-list li {
+    font-size: 8.8pt;
+    line-height: 1.4;
+  }
+
+  .contact-list li strong {
+    min-width: 52px;
+    font-size: 8.7pt;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px 16px;
+  }
+
+  .skill-group h3 { margin-bottom: 4px; font-size: 8.7pt; }
+  .skill-tags { gap: 4px; }
+  .skill-tags span {
+    padding: 2px 6px;
+    font-size: 7.8pt;
+    background: #f5fbfb;
+    border-color: #d8e8ea;
+    color: #31515c;
+  }
+
+  .project-list { gap: 6px; }
+  .project-card {
+    padding: 8px 10px;
+    border-radius: 5px;
+    background: #fff;
+    border-color: var(--line);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .project-topline h3, .achievement h3 { font-size: 8.9pt; }
+  .project-type {
+    font-size: 6.8pt;
+    padding: 2px 5px;
+    background: #e6f4f4;
+    color: var(--accent-dark);
+  }
+
+  .project-card p { margin-top: 4px; font-size: 8.2pt; }
+  .project-card .tech-line { font-size: 7.7pt; }
+  .fine-print { font-size: 7.3pt; margin-top: 5px; }
+  .degree { font-size: 8.8pt; margin-top: 3px; }
+  .muted { font-size: 7.8pt; }
+
+  .achievement {
+    grid-template-columns: 52px 1fr;
+    gap: 8px;
+    padding: 6px 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .achievement-year {
+    font-size: 7pt;
+    color: var(--accent-dark);
+  }
+
+  .achievement p { font-size: 8.1pt; margin-top: 2px; }
+  .education-entry {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .resume-footer {
+    padding: 9px 24px 12px;
+    font-size: 7.8pt;
+    background: #f7fafb;
+    border-top: 1px solid var(--line);
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none;
+  }
+
+  .resume-section, .project-card, .education-entry, .achievement {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">RESUME · COMPUTER SCIENCE & ENGINEERING</p>
+        <h1>Vansh <span>Chandel</span></h1>
+        <p class="hero-subtitle">B.Tech CSE Student · Lovely Professional University</p>
+        <p class="hero-summary">Aspiring software developer interested in building practical, reliable, and user-friendly applications.</p>
+      </div>
+      <div class="hero-actions screen-only">
+        <button class="print-button" id="print-resume" type="button">
+          <span aria-hidden="true">↧</span> Print / Save as PDF
+        </button>
+      </div>
+      <div class="hero-mark" aria-hidden="true">VC<span>.</span></div>
+    </header>
+
+    <nav class="quick-nav screen-only" aria-label="Resume sections">
+      <a href="#contact">Contact</a>
+      <a href="#summary">Summary</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#achievements">Achievements</a>
+    </nav>
+
+    <main class="resume-content">
+      <!-- ===== CONTACT SECTION ===== -->
+      <section class="resume-section" id="contact">
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <h2>Contact</h2>
+        </div>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:vanshchandel100@gmail.com">vanshchandel100@gmail.com</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+917807298949">+91 78072 98949</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/Vansh-py" target="_blank" rel="noopener">Vansh-py</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vansh-chandel-6140b242a/?isSelfProfile=true" target="_blank" rel="noopener">Vansh Chandel</a></li>
+          <li><strong>Current Location:</strong> Punjab, India</li>
+        </ul>
+      </section>
+
+      <section class="resume-section" id="summary">
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <h2>Professional Summary</h2>
+        </div>
+        <p class="body-copy">I am a Computer Science and Engineering student at Lovely Professional University with a strong interest in software development, web technologies, and problem-solving. I enjoy learning new technologies and applying my knowledge to build practical projects using Python, C++, HTML, CSS, JavaScript, and SQL. I am continuously improving my programming fundamentals and exploring development tools. I value consistency, adaptability, and continuous learning, and aim to gain practical industry experience while building useful software solutions.</p>
+      </section>
+
+      <section class="resume-section" id="skills">
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <h2>Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Programming</h3>
+            <div class="skill-tags"><span>Python</span><span>C++</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Web Development</h3>
+            <div class="skill-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Databases</h3>
+            <div class="skill-tags"><span>SQL</span><span>MySQL</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Tools & Workflow</h3>
+            <div class="skill-tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>JetBrains IDEs</span><span>Docker (basic)</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Professional Skills</h3>
+            <div class="skill-tags"><span>Problem-Solving</span><span>Communication</span><span>Public Speaking</span><span>Analytical Thinking</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section" id="projects">
+        <div class="section-heading">
+          <span class="section-number">04</span>
+          <h2>Selected Projects</h2>
+        </div>
+        <div class="project-list">
+          <article class="project-card">
+            <div class="project-topline"><h3>Tree Plantation & Monitoring Application</h3><span class="project-type">Web App</span></div>
+            <p>Developing a web application to record plantation activities and track tree growth and maintenance, with a focus on simple data entry and monitoring.</p>
+            <p class="tech-line"><strong>Technologies:</strong> HTML, CSS, JavaScript, structured data / SQL exploration</p>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><h3>Python AI Assistant</h3><span class="project-type">Desktop App</span></div>
+            <p>Built a personal assistant prototype combining speech recognition, text-to-speech, information lookup, and basic desktop and web utilities.</p>
+            <p class="tech-line"><strong>Technologies:</strong> Python, speech recognition, pyttsx3, Tkinter</p>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><h3>Atomic Assistant</h3><span class="project-type">Web Project</span></div>
+            <p>Created a browser-based assistant project with an interactive interface, using core front-end technologies.</p>
+            <p class="tech-line"><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="resume-section" id="education">
+        <div class="section-heading">
+          <span class="section-number">05</span>
+          <h2>Education</h2>
+        </div>
+        <div class="education-entry">
+          <div class="education-marker" aria-hidden="true"></div>
+          <div class="education-details">
+            <div class="project-topline"><h3>Lovely Professional University</h3><span class="date-label">Expected May 2030</span></div>
+            <p class="degree">Bachelor of Technology (B.Tech) in Computer Science and Engineering</p>
+            <p class="muted">Punjab, India</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section" id="achievements">
+        <div class="section-heading">
+          <span class="section-number">06</span>
+          <h2>Awards & Achievements</h2>
+        </div>
+        <div class="achievement-list">
+          <article class="achievement">
+            <div class="achievement-year">2024</div>
+            <div><h3>1st Prize — Science & Technology Exhibition</h3><p>Amar Shaheed Captain Saurabh Kalia Memorial Inter-School Science Exhibition Competition.</p></div>
+          </article>
+          <article class="achievement">
+            <div class="achievement-year">2025</div>
+            <div><h3>3rd Prize — Science & Technology Exhibition</h3><p>Earned another placing at the same science and technology exhibition in the following year.</p></div>
+          </article>
+          <article class="achievement">
+            <div class="achievement-year">Others</div>
+            <div><h3>Quiz, Debate & Declamation Competitions</h3><p>Won multiple competitions, demonstrating knowledge, public speaking, and reasoning skills.</p></div>
+          </article>
+          <article class="achievement">
+            <div class="achievement-year">Chess</div>
+            <div><h3>State-Level School Representation</h3><p>Represented school in a state-level chess competition and was recognized as a leading chess player at school.</p></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="resume-footer">
+      <p>Vansh Chandel <span>·</span> Computer Science & Engineering</p>
+    </footer>
+  </div>
+  <script>
+// Opens the browser print dialog. Choose "Save as PDF" to export the resume.
+document.getElementById("print-resume")?.addEventListener("click", () => {
+  window.print();
+});
+  </script>
+</body>
+</html>
